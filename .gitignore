@@ -1,0 +1,9 @@
+bin/
+backup/
+data/
+etc/
+usr/
+tmp/
+*.log
+*.exe
+*.rdb
