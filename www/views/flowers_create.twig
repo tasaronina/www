@@ -1,0 +1,47 @@
+{% extends "__layout.twig" %}
+
+{% block content %}
+    <h1>Добавление объекта цветочного мира</h1>
+    <hr>
+
+    {% if message %}
+<div class="col-12">
+    <div class="alert alert-info" style="margin-top: 1rem;">
+        {{ message }}
+        <a href="/type-flowers/{{id}}">Открыть новый объект</a>
+    </div>
+</div>
+{% endif %}
+
+
+    <form action="" enctype="multipart/form-data" method="POST" class="row g-3">
+        <div class="col-4">
+            <label class="form-label">Название</label>
+            <input type="text" class="form-control" name="title">
+        </div>
+        <div class="col-4">
+            <label class="form-label">Краткое описание</label>
+            <input type="text" class="form-control" name="description">
+        </div>
+        <div class="col-4">
+            <label class="form-label">Тип</label>
+            <select class="form-control" name="type">
+                {% for type in object_types %}
+                    <option value="{{ type.title }}">{{ type.title }}</option>
+                {% else %}
+                    <option disabled>Типы не найдены</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Картинка</label>
+            <input class="form-control" type="file" name="image">
+          </div>
+        <div class="col-12">
+            <textarea name="info" placeholder="Полное описание..." class="form-control" rows="5"></textarea>
+        </div>
+        <div class="col-12 text-end">
+            <button type="submit" class="btn btn-primary">Добавить</button>
+        </div>
+    </form>
+{% endblock %}

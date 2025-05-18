@@ -14,7 +14,8 @@
         require_once "../controllers/Controller404.php";
         require_once "../controllers/ObjectController.php"; 
         require_once "../controllers/SearchController.php";
-    
+        require_once "../controllers/FlowersCreateController.php";
+        require_once "../controllers/ObjectTypeCreateController.php";
         
        
         
@@ -46,6 +47,9 @@
         $router->add("/type-flowers/(\d+)", ObjectController::class);
 
         $router->add("/search", SearchController::class);
+        $router->add("/flowers/create", FlowersCreateController::class);
+        $router->add("/object-types/create", ObjectTypeCreateController::class);
+
 
 
 

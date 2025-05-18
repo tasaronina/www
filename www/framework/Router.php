@@ -71,7 +71,6 @@ class Router {
             $controllerInstance->setTwig($this->twig);
         }
 
-        // вызываем метод get контроллера и возвращаем результат
-        return $controllerInstance->get();
+        return $controllerInstance->process_response(); // теперь тут process_response вместо get
     }
 }

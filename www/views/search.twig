@@ -9,9 +9,10 @@
         <select class="form-select" name="type">
             <option value="all" {% if search_type == 'all' or not search_type %}selected{% endif %}>Все типы</option>
             {% for t in types %}
-                <option value="{{ t.type|e }}" {% if t.type == search_type %}selected{% endif %}>{{ t.type|title }}</option>
+                <option value="{{ t.title|e }}" {% if t.title == search_type %}selected{% endif %}>{{ t.title|title }}</option>
             {% endfor %}
         </select>
+        
     </div>
     <div class="col-md-3">
         <input class="form-control" type="text" name="info" value="{{ search_info|e }}" placeholder="Полное описание">

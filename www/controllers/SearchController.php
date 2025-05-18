@@ -38,8 +38,15 @@ class SearchController extends BaseFlowersTwigController {
     $context['search_title'] = $title;
     $context['search_type'] = $type;
     $context['search_info'] = $info;
+
+    // Получаем все типы из таблицы object_types
+    $sql = "SELECT * FROM object_types";
+    $query = $this->pdo->query($sql);
+    $context['types'] = $query->fetchAll(PDO::FETCH_ASSOC);
     
 
     return $context;
+    
+
     }
 }
