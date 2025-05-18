@@ -1,0 +1,37 @@
+{% extends "__layout.twig" %}
+{% block content %}
+<h1>Поиск</h1>
+<form method="get" class="row g-3 align-items-center mb-4">
+    <div class="col-md-3">
+        <input class="form-control" type="text" name="title" value="{{ search_title|e }}" placeholder="Название">
+    </div>
+    <div class="col-md-3">
+        <select class="form-select" name="type">
+            <option value="all" {% if search_type == 'all' or not search_type %}selected{% endif %}>Все типы</option>
+            {% for t in types %}
+                <option value="{{ t.type|e }}" {% if t.type == search_type %}selected{% endif %}>{{ t.type|title }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-md-3">
+        <input class="form-control" type="text" name="info" value="{{ search_info|e }}" placeholder="Полное описание">
+    </div>
+    
+    <div class="col-md-1">
+        <button class="btn btn-primary w-100" type="submit">Искать</button>
+    </div>
+</form>
+
+{% if objects is defined %}
+    <ul class="list-group">
+        {% for obj in objects %}
+            <li class="list-group-item">
+                <a href="/type-flowers/{{ obj.id }}">{{ obj.title }}</a>
+                <span class="text-muted">({{ obj.type }})</span>
+            </li>
+        {% else %}
+            <li class="list-group-item text-muted">Ничего не найдено</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}

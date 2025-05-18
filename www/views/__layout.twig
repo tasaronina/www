@@ -34,7 +34,14 @@
                             </li>
                             {% set shownTypes = shownTypes|merge([type.type]) %}
                          {% endif %}
+                         
                         {% endfor %}
+                        {# Вот сюда вставь пункт поиска #}
+                            <li class="nav-item">
+                         <a class="nav-link" href="/search">
+                        <i class="fas fa-search"></i> Поиск
+                        </a>
+                        </li>
                     </ul>
                 </div>
             </div>

@@ -13,6 +13,7 @@
         require_once "../controllers/OrchidInfoController.php";
         require_once "../controllers/Controller404.php";
         require_once "../controllers/ObjectController.php"; 
+        require_once "../controllers/SearchController.php";
     
         
        
@@ -43,6 +44,9 @@
 
         // Добавляем универсальные маршруты для info и image
         $router->add("/type-flowers/(\d+)", ObjectController::class);
+
+        $router->add("/search", SearchController::class);
+
 
 
        
