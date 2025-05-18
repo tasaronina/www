@@ -1,0 +1,16 @@
+{% extends "__layout.twig" %}
+{% block content %}
+<h1>Редактировать карточку</h1>
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Название</label>
+        <input type="text" name="title" class="form-control" value="{{ object.title|e }}" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Описание</label>
+        <textarea name="info" class="form-control" required>{{ object.info|e }}</textarea>
+    </div>
+    {# Если нужно, добавь поле для загрузки картинки #}
+    <button type="submit" class="btn btn-success">Сохранить изменения</button>
+</form>
+{% endblock %}

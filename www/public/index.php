@@ -17,6 +17,7 @@
         require_once "../controllers/FlowersCreateController.php";
         require_once "../controllers/ObjectTypeCreateController.php";
         require_once "../controllers/FlowersDeleteController.php";
+        require_once "../controllers/FlowersEditController.php";
        
         
         require_once "../controllers/ObjectController.php";
@@ -50,6 +51,7 @@
         $router->add("/flowers/create", FlowersCreateController::class);
         $router->add("/object-types/create", ObjectTypeCreateController::class);
         $router->add("/type-flowers/(\d+)/delete", FlowersDeleteController::class);
+        $router->add("/type-flowers/(\d+)/edit", FlowersEditController::class);
 
 
 
