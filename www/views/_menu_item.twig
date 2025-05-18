@@ -1,0 +1,17 @@
+<li style="flex: 0 0 calc(33.333% - 24px); box-sizing: border-box;">
+    <div class="card" style="display: flex; flex-direction: column; align-items: center; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); padding: 12px;">
+      <div class="card-img-container" style="height: 180px; width: 180px; overflow: hidden; display: flex; justify-content: center; align-items: center;">
+        <img src="{{ item.image }}" alt="{{ item.title }}" style="max-width: 100%; max-height: 100%; object-fit: cover;">
+      </div>
+      <div class="row">
+        <a class="btn btn-primary" style=" width: 100%; text-align: center; margin-top: 10px;" href="/type-flowers/{{ item.id }}">
+            {{ item.title }}
+        </a>
+    </div>
+      <div style="display: flex; gap: 12px; margin-top: 8px;">
+        <a href="/type-flowers/{{ item.id }}/image" class="btn btn-link p-0">Картинка</a>
+        <a href="/type-flowers/{{ item.id }}/info" class="btn btn-link p-0">Описание</a>
+      </div>
+    </div>
+  </li>
+  

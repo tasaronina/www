@@ -1,0 +1,41 @@
+{% extends "__layout.twig" %}
+{% import "_macros.twig" as macros %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+
+    <ul class="nav nav-pills mb-3">
+        <li class="nav-item">
+            {{ macros.btn("Картинка", '/type-flowers/' ~ id ~ '?show=image', temp == 'Картинка' ? 'primary' : 'outline-primary') }}
+        </li>
+        <li class="nav-item ms-2">
+            {{ macros.btn("Описание", '/type-flowers/' ~ id ~ '?show=info', temp == 'Описание' ? 'primary' : 'outline-primary') }}
+        </li>
+        <li class="nav-item ms-2">
+            {{ macros.btn("Общее", '/type-flowers/' ~ id, temp == 'Общее' ? 'primary' : 'outline-primary') }}
+        </li>
+    </ul>
+    
+    {% if show_image %}
+        {% if image %}
+            <img src="{{ image }}" class="img-fluid mb-3" alt="{{ title }}">
+        {% else %}
+            <p>Нет изображения.</p>
+        {% endif %}
+    {% elseif show_info %}
+        <div class="mb-3">
+            <h4>Описание</h4>
+            <p>{{ description }}</p>
+            <h4>Полная информация</h4>
+            <p>{{ info }}</p>
+        </div>
+    {% else %}
+        <div class="mb-3">
+            {% if image %}
+                <img src="{{ image }}" class="img-fluid mb-3" alt="{{ title }}">
+            {% endif %}
+            <h4>Полная информация</h4>
+            <p>{{ info }}</p>
+        </div>
+    {% endif %}
+{% endblock %}
