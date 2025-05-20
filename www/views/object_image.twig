@@ -1,0 +1,10 @@
+{% extends "__layout.twig" %}
+{% block content %}
+  <h1>{{ object.title }}</h1>
+  {% if object.image %}
+    <img src="{{ object.image }}" class="img-fluid" alt="{{ object.title }}">
+  {% else %}
+    <p>Изображение отсутствует.</p>
+  {% endif %}
+  <a href="/type-flowers/{{ object.id }}">← Назад</a>
+{% endblock %}

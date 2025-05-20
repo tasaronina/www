@@ -1,16 +1,16 @@
-{% extends "__object.twig" %}
+{#{% extends "__object.twig" %}
 {% import "_macros.twig" as macros %}
 
 {% block content %}
 <div class="container mt-2 mb-2">
 
     {# Первый блок - description #}
-    <div>
+    {#<div>
         {{ description|raw }}
     </div>
 
     {# Навигационные кнопки #}
-    <div class="my-3">
+    {#<div class="my-3">
         <ul class="nav nav-pills">
             {{ macros.nav("Картинка", "/type-flowers/" ~ title_objects.id ~ "/image", temp == "Картинка") }}
             {{ macros.nav("Описание", "/type-flowers/" ~ title_objects.id ~ "/info", temp == "Описание") }}
@@ -18,9 +18,9 @@
     </div>
 
     {# Второй блок - info #}
-    <div>
+    {#<div>
         {{ info|raw }}
     </div>
 
 </div>
-{% endblock %}
+{% endblock %}#}

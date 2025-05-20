@@ -5,12 +5,7 @@
         require_once '../framework/autoload.php';
 
         require_once "../controllers/MainController.php";
-        require_once "../controllers/LilyController.php";
-        require_once "../controllers/LilyImageController.php";
-        require_once "../controllers/LilyInfoController.php";
-        require_once "../controllers/OrchidController.php";
-        require_once "../controllers/OrchidImageController.php";
-        require_once "../controllers/OrchidInfoController.php";
+        
         require_once "../controllers/Controller404.php";
         require_once "../controllers/ObjectController.php"; 
         require_once "../controllers/SearchController.php";
@@ -18,6 +13,9 @@
         require_once "../controllers/ObjectTypeCreateController.php";
         require_once "../controllers/FlowersDeleteController.php";
         require_once "../controllers/FlowersEditController.php";
+        require_once "../controllers/ObjectImageController.php";
+        require_once "../controllers/ObjectInfoController.php";
+        require_once "../controllers/ObjectController.php";
        
         
         require_once "../controllers/ObjectController.php";
@@ -52,6 +50,10 @@
         $router->add("/object-types/create", ObjectTypeCreateController::class);
         $router->add("/type-flowers/(\d+)/delete", FlowersDeleteController::class);
         $router->add("/type-flowers/(\d+)/edit", FlowersEditController::class);
+
+        $router->add("/type-flowers/(\d+)/image", ObjectImageController::class);
+        $router->add("/type-flowers/(\d+)/info",  ObjectInfoController::class);
+        $router->add("/type-flowers/(\d+)",        ObjectController::class);
 
 
 

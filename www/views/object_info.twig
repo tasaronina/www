@@ -1,0 +1,9 @@
+{% extends "__layout.twig" %}
+{% block content %}
+  <h1>{{ object.title }}</h1>
+  <h4>Краткое описание</h4>
+  <p>{{ object.description }}</p>
+  <h4>Полная информация</h4>
+  <p>{{ object.info }}</p>
+  <a href="/type-flowers/{{ object.id }}">← Назад</a>
+{% endblock %}
